@@ -12,8 +12,8 @@ interface Ipost{
 
 const Posts = async() =>{
   const response = await fetch(base_url, {
-    next:  {revalidate: 3600}
-    // cache : "no-store"
+    //next:  {revalidate: 3600}
+     cache : "no-store"
   })
   const posts: Ipost[] = await response.json()
   return(
